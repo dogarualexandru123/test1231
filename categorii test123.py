@@ -26,28 +26,25 @@ driver.implicitly_wait(5)
 driver.delete_all_cookies()
 
 driver.get("chrome-search://local-ntp/local-ntp.html")
-driver.get("https://www.emag.ro/user/login?ref=hdr_signup_btn")
-driver.find_element_by_id("email").send_keys("mjewell@aol.com")
+driver.get("https://www.emag.ro/user/account")
 
+driver.find_element_by_id("email").send_keys("kipesoc676@newmail.top")
 driver.find_element_by_xpath("/html/body/form/div[4]/div/button").click()
-driver.find_element_by_xpath("//input[@type='text']").send_keys("Dogaru Alexeie")
-driver.find_element_by_id("r_password").send_keys("Test123@")
-driver.find_element_by_id("r_password_confirmation").send_keys("Test123@")
-driver.implicitly_wait(5)
 
 
-driver.execute_script("$('#agree_terms').click()");
+driver.find_element_by_xpath("//input[@type='password']").send_keys("Test123@")
+driver.find_element_by_xpath("/html/body/form/div[4]/div/button").click()
+driver.get("https://www.emag.ro/cart/products?ref=cart")
+test = driver.find_element_by_xpath("//*[@id=\"cartProductsPage\"]/div[3]/div/div/div[3]/a")
+ActionChains(driver).move_to_element(test).click().perform()
 
+# Fill in all delivery/personal data info fields
 
-driver.find_element_by_xpath("//button[@type='submit']").click()
+test = driver.find_element_by_xpath("//button[@type='submit']")
+ActionChains(driver).move_to_element(test).click().perform()
 
+# Verify the delivery data info
 
-# touch the photo verify system manually
-
-
-
-
-
-
-
+test = driver.find_element_by_xpath("//button[@type='submit']")
+ActionChains(driver).move_to_element(test).click().perform()
 

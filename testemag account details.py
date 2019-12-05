@@ -26,28 +26,30 @@ driver.implicitly_wait(5)
 driver.delete_all_cookies()
 
 driver.get("chrome-search://local-ntp/local-ntp.html")
-driver.get("https://www.emag.ro/user/login?ref=hdr_signup_btn")
-driver.find_element_by_id("email").send_keys("mjewell@aol.com")
+driver.get("https://www.emag.ro/user/account")
 
+driver.find_element_by_id("email").send_keys("kipesoc676@newmail.top")
 driver.find_element_by_xpath("/html/body/form/div[4]/div/button").click()
-driver.find_element_by_xpath("//input[@type='text']").send_keys("Dogaru Alexeie")
-driver.find_element_by_id("r_password").send_keys("Test123@")
-driver.find_element_by_id("r_password_confirmation").send_keys("Test123@")
-driver.implicitly_wait(5)
 
 
-driver.execute_script("$('#agree_terms').click()");
+driver.find_element_by_xpath("//input[@type='password']").send_keys("Test123@")
+driver.find_element_by_xpath("/html/body/form/div[4]/div/button").click()
 
 
-driver.find_element_by_xpath("//button[@type='submit']").click()
+test = driver.find_element_by_xpath("//button[@type='button']")
+ActionChains(driver).move_to_element(test).click().perform()
 
-
-# touch the photo verify system manually
-
+driver.find_element_by_xpath("//input[@placeholder='ex: popalex3']").click()
+driver.find_element_by_xpath("//input[@placeholder='ex: popalex3']").click()
 
 
 
+driver.find_element_by_xpath("//input[@placeholder='ex: popalex3']").send_keys("alex")
+driver.find_element_by_name("telephone1").send_keys("0771496456")
+
+driver.find_element_by_name("telephone1").send_keys(u'\ue007')
 
 
+driver.find_element_by_xpath("//button[@type='button']").click()
 
 
